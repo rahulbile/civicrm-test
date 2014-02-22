@@ -12,4 +12,4 @@ default:
       drush:
         alias: self
       drupal:
-        drupal_root: "/home/travis/build/rahulbile/civicrm-tests"
+        drupal_root: "/home/travis/build/rahulbile/civicrm-tests/drupal"
