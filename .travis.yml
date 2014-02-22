@@ -54,9 +54,11 @@ install:
 
 before_script:
 
-  # Do the site install
-  - if [[ "$UPGRADE" == none ]]; then cd drupal;
+  # Do the site and civicrm install
+  - if [[ "$UPGRADE" == none ]]; then cd drupal; fi
   - drush si standard --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="CiviCRM" --yes
+  - drush cc drush
+  - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules/civicrm' --destination='sites/all/modules/civicrm' --site_url='http://127.0.0.1:8888'
   - cd ..
 
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
