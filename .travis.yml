@@ -60,6 +60,7 @@ before_script:
   - drush si standard --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="CiviCRM" --yes
   - drush cc drush
   - drush cc all
+  - drush
   - sudo chmod -R 777 sites/default
   - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules' --destination='sites/all/modules'
   - cd ..
