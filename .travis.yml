@@ -32,12 +32,12 @@ install:
   # Build Codebase
   - drush dl drupal-7.26
   - mv drupal-7.26 drupal
+  - cd drupal/sites/all/modules
   - git clone https://github.com/civicrm/civicrm-core.git -b master civicrm
+  - cd civcrm
   - git clone https://github.com/civicrm/civicrm-packages -b master packages
   - git clone https://github.com/civicrm/civicrm-drupal -b 7.x-master drupal
-  - mv civicrm sites/all/modules
-  - mv packages sites/all/modules/civicrm
-  - mv drupal sites/all/modules/civicrm
+  - cd ../../../../../
 
   # Setup files
   - sudo chmod -R 777 drupal/sites/default
