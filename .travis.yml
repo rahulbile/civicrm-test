@@ -21,7 +21,7 @@ install:
 
   # install drush
   - pear channel-discover pear.drush.org
-  - pear install drush/drush-5.8.0
+  - pear install drush/drush-6.0-beta1
   - phpenv rehash
 
   # Build Behat dependencies
@@ -60,9 +60,9 @@ before_script:
   - drush si standard --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="CiviCRM" --yes
   - drush cc drush
   - drush cc all
-  - drush
+  - echo drush
   - sudo chmod -R 777 sites/default
-  - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules' --destination='sites/all/modules'
+  - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules' --destination='sites/all/modules' --debug
   - cd ..
 
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
