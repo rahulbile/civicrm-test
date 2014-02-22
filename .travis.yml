@@ -34,7 +34,7 @@ install:
   - mv drupal-7.26 drupal
   - cd drupal/sites/all/modules
   - git clone https://github.com/civicrm/civicrm-core.git -b master civicrm
-  - cd civcrm
+  - cd civicrm
   - git clone https://github.com/civicrm/civicrm-packages -b master packages
   - git clone https://github.com/civicrm/civicrm-drupal -b 7.x-master drupal
   - cd ../../../../../
