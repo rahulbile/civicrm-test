@@ -61,7 +61,7 @@ before_script:
   - drush cc all
   - echo drush
   - sudo chmod -R 777 sites/default
-  - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules' --destination='sites/all/modules' --debug
+  - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules/' --destination='sites/all/modules/' --debug
   - cd ..
 
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
