@@ -58,6 +58,7 @@ before_script:
   - if [[ "$UPGRADE" == none ]]; then cd drupal; fi
   - drush si standard --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="CiviCRM" --yes
   - drush cc drush
+  - sudo chmod -R 777 drupal/sites/default
   - drush civicrm-install --dbhost='127.0.0.1' --dbname='drupal' --dbuser='root' --dbpass='' --tarfile='sites/all/modules/civicrm' --destination='sites/all/modules/civicrm' --site_url='http://127.0.0.1:8888'
   - cd ..
 
